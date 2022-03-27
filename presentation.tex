@@ -83,7 +83,7 @@
       \begin{enumerate}
         \item all files are stored on a central server
         \item each developer can checkout a specific file, which makes other developers unable to edit it as well
-      \end{enumerate}\vspace{20pt}
+      \end{enumerate}\vspace{10pt}
 
       \begin{enumerate}
         \item each developer has local copy of all the files
@@ -205,8 +205,7 @@
   git diff\end{lstlisting}
   \note{does not show diffs of already staged aka. commited files}
   \begin{itemize}
-    \item \textcolor{magenta}{--staged} also diff files which are already committed
-    \item \textcolor{magenta}{HEAD} 
+    \item \textcolor{magenta}{--staged} also diff files which are already staged
   \end{itemize}
   \note{show how to compare diff of two commits}
   \begin{lstlisting}
@@ -218,9 +217,7 @@
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \begin{lstlisting}
-  git checkout <commit-id>
-  git checkout -b <commit-id> <branch-name>
-      \end{lstlisting} 
+  git checkout <commit-id>\end{lstlisting} 
 
       \end{column}
     \begin{column}{0.5\textwidth}
@@ -232,7 +229,7 @@
   \note{compares the already commited stages with the specified commit}
 \end{frame}
 
-
+%TODO Look at this again
 \begin{frame}[fragile,t]{Reverting changes/Cleaning up}\vspace{10pt}
   revert unstaged changes
   \begin{lstlisting}
@@ -265,7 +262,7 @@
 \end{frame}
 
 
-\begin{frame}[fragile,t]{git reset}{10pt}
+\begin{frame}[fragile,t]{git reset}\vspace{10pt}
   Three primary modes of invocation, which correspond to gits internal management stages. Mostly used to remove files from the staging area
   \begin{itemize}
     \item \textcolor{magenta}{--soft}: the commit tree(HEAD)
@@ -338,6 +335,7 @@
   \note{checkout main again and show that there are now changes}
   \note{git checkout main}
   \note{git merge feature/user}
+  %TODO
   \begin{lstlisting}[basicstyle=\ttfamily\tiny]
   git checkout main
   git branch -d feature/user #safe delete
@@ -402,10 +400,6 @@
 \begin{frame}[fragile,t]{Versioning}\vspace{10pt}
 \end{frame}
 
-\begin{frame}[fragile,t]{git bisect}\vspace{10pt}
-\end{frame}
-
-
 \begin{frame}[fragile,t]{git difftools}\vspace{10pt}
 \end{frame}
 
@@ -434,6 +428,7 @@
     \item git subtrees: alternative to git submodules
     \item git reflog
     \item git hub workflows(CI/CD)
+    \item git bisect  "automatic" bug finding, requires tests
   \end{enumerate}
 \end{frame}
 
