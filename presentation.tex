@@ -338,8 +338,27 @@
   %TODO
   \begin{lstlisting}[basicstyle=\ttfamily\tiny]
   git checkout main
-  git branch -d feature/user #safe delete
-  \end{lstlisting}\vspace{10pt}
+  git merge <other-branch> # merges the other branch onto main
+  git branch -d feature/user # safe delete\end{lstlisting}\vspace{10pt}
+
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[scale=0.2]{screenshots/merge.png}
+        \caption{Before a merge}
+      \end{figure}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \vspace{-15pt}
+        \centering
+        \includegraphics[scale=0.2]{screenshots/merge2.png}
+        \caption{After a merge}
+      \end{figure}
+    \end{column}
+  \end{columns}
   \note{does not work if there still are uncommited changes}
 \end{frame}
 
