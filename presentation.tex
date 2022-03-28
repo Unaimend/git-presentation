@@ -418,6 +418,10 @@
   Combines older/multiple commits into one base commit.\vspace{10pt}\\
   Alleviates the issue of what/when to commit\vspace{10pt}\\
   Do \textcolor{red}{NOT} use in public repositories/already published changes. There are workflows to mitigate this risk
+
+  \begin{lstlisting}
+  git rebase -i\end{lstlisting}
+
 \end{frame}
 
 \begin{frame}[fragile,t]{git difftools}\vspace{10pt}
@@ -436,33 +440,37 @@
 \begin{frame}[fragile,t]{Things not covered}\vspace{10pt}
   \begin{enumerate}
     \item git lfs: git large file storage
-    \item git merge in-depth
-    \item git rebase: "alternative" to merge %https://www.youtube.com/watch?v=f1wnYdLEpgI&ab_channel=TheModernCoder
+    \item git merge in-depth: understanding what merge does exactly is pretty usefull when working with it
+    \item git rebase: "alternative" to merge, allows a linear commit history %https://www.youtube.com/watch?v=f1wnYdLEpgI&ab_channel=TheModernCoder
     \item git rebase: Changing history %https://www.youtube.com/watch?v=9y9IRBKDU4I&ab_channel=raywenderlich.com
-    \item git rebase vs merge
-    \item git workflows
-    \item forking 
-    \item git blame
+    \item git rebase vs merge: rebase allows a cleaner history
+    \item git workflows: automatic running of tests and deployment i.e. publishing to pip or stuff like that
+    \item forking: how copy other open source project and contribute to them -> leads to pull requests
+    \item git blame: who/what was modified on a specific file
   \end{enumerate}
 \end{frame}
 
 \begin{frame}[fragile,t]{Things not covered}\vspace{10pt}
   \begin{enumerate}
-    \item git hooks: run user scripts at specific git events
+      \setcounter{enumi}{8}
+    \item git hooks: run user scripts at specific git events(server/client side)
     \item git cherrypick
     \item git submodules: incorporate external code https://www.atlassian.com/git/tutorials/git-submodule
     \item git subtrees: alternative to git submodules
-    \item git reflog
-    \item git hub workflows(CI/CD)
-    \item git bisect  "automatic" bug finding, requires tests
+    \item git reflog: Allows you to visit commits, which are not referenced by any brach anymore, for example after a squash
+    \item git bisect:  "automatic" bug finding, requires tests
     \item git alias: Make "shortcuts" for git commands
   \end{enumerate}
 \end{frame}
 
 
 \begin{frame}[fragile,t]{Warning}\vspace{10pt}
-  A lot of those commands which change the history have to be used with caution if you work on a public repo. with other developers please read up/think about what happens when your change your history and try to push those changes, but that is out of scope for this presentation.
+  A lot of the commands which change the history have to be used with caution if you work on a public repo. with other developers, please read up/think about what happens when your change local history referenced by other developers and try to push those changes, but that is out of the scope for this presentation.
+  \begin{figure}
+      \centering
+      \includegraphics[width=0.5\textwidth,height=0.5\textheight]{memes/with-great-power.jpg}
 
+  \end{figure}
 \end{frame}
 
 \begin{frame}[fragile,t]{References}\vspace{10pt}
@@ -474,7 +482,7 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Questions?}
   \centering
       \includegraphics[width=0.7\textwidth,height=0.7\textheight]{memes/git_awesome.jpg}
 \end{frame}
