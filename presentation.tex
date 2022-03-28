@@ -398,6 +398,26 @@
 \end{frame}
 
 \begin{frame}[fragile,t]{Versioning}\vspace{10pt}
+  no standard way of when/what to commit
+  commit \textcolor{magenta}{semantically} similiar units\vspace{10pt}
+
+  \textbf{SemVer}
+  \textbf{Prerequisite}: A version number in the form of MAJOR.MINIOR.PATCH
+  Change 
+  \begin{enumerate}
+      \item MAJOR version when you make incompatible API changes
+      \item MINOR version when you add functionality in a backwards compatible manner
+      \item PATCH version when you make backwards compatible bug fixes
+  \end{enumerate}\vspace{10pt}
+  All of those, of course, warrant a commit but are not really applicable outside of software engineering
+
+  There is a another workflow based on rebase, which enables you to basically just commit everything%TODO Is this true
+\end{frame}
+
+\begin{frame}[fragile,t]{git rebase}\vspace{10pt}
+  Combines older/multiple commits into one base commit.\vspace{10pt}\\
+  Alleviates the issue of what/when to commit\vspace{10pt}\\
+  Do \textcolor{red}{NOT} use in public repositories/already published changes. There are workflows to mitigate this risk
 \end{frame}
 
 \begin{frame}[fragile,t]{git difftools}\vspace{10pt}
@@ -417,11 +437,17 @@
   \begin{enumerate}
     \item git lfs: git large file storage
     \item git merge in-depth
-    \item git rebase: "alternative" to merge
+    \item git rebase: "alternative" to merge %https://www.youtube.com/watch?v=f1wnYdLEpgI&ab_channel=TheModernCoder
+    \item git rebase: Changing history %https://www.youtube.com/watch?v=9y9IRBKDU4I&ab_channel=raywenderlich.com
     \item git rebase vs merge
     \item git workflows
     \item forking 
     \item git blame
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile,t]{Things not covered}\vspace{10pt}
+  \begin{enumerate}
     \item git hooks: run user scripts at specific git events
     \item git cherrypick
     \item git submodules: incorporate external code https://www.atlassian.com/git/tutorials/git-submodule
@@ -429,7 +455,14 @@
     \item git reflog
     \item git hub workflows(CI/CD)
     \item git bisect  "automatic" bug finding, requires tests
+    \item git alias: Make "shortcuts" for git commands
   \end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile,t]{Warning}\vspace{10pt}
+  A lot of those commands which change the history have to be used with caution if you work on a public repo. with other developers please read up/think about what happens when your change your history and try to push those changes, but that is out of scope for this presentation.
+
 \end{frame}
 
 \begin{frame}[fragile,t]{References}\vspace{10pt}
@@ -437,6 +470,7 @@
     \item https://git-scm.com/site(All material under MIT)
     \item ProGit(All material under CreativeCommons CC-BY-NC-SA)
     \item Atlassian tutorials(Just stolen :'), no license given)
+    \item https://semver.org/lang/en/
   \end{enumerate}
 \end{frame}
 
