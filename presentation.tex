@@ -360,6 +360,65 @@
   \note{does not work if there still are uncommited changes}
 \end{frame}
 
+
+\begin{frame}[fragile,t]{Fast forward merge}\vspace{10pt}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      occur when there is a \textbf{linear path} from the current branch tip to the target branch\vspace{10pt}\\
+      Otherwise use a 3-way-merge(is done automatically)
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \vspace{-15pt}
+        \centering
+        \includesvg[scale=0.3]{screenshots/fast_forward_2}
+        \caption{Fast forward merge}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile,t]{Three way merge}\vspace{10pt}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      no linear path from the tip of main to the tip of the other branch\vspace{10pt}\\
+      can result in merge conflicts, when the two branches change similar parts of a file
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \vspace{-15pt}
+        \centering
+        \includesvg[scale=0.25]{screenshots/three-way-merge}
+        \caption{Three way merge}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile,t]{Merge conflicts}
+  What happens when we make conflicting changes?
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      Git will inform us about the conflict\vspace{10pt}
+      \includegraphics[scale=0.2]{screenshots/conflict.png}\\
+      The text above "=========" is from the receiving branch, text below from the "to-be-merged" branch\vspace{10pt}
+      To fix the conflict just delete everything you do not want, including the "$<<<$, $>>>>$ and ===="
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+          \centering
+          \includegraphics[scale=0.2]{memes/git_merge_conflict.jpg}
+          \caption{It's actualy not that bad}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
 \begin{frame}[fragile,t]{Collaboration}\vspace{10pt}
   We now know how to 
   \begin{enumerate}
@@ -375,14 +434,10 @@
   \note{Those are the basics of working locally. But you are probably asking yourself: Whats up with GitLab and GitHub and how can I backup my files, because atm all of our files are still only stored on our local computer i.e. if the drive fails all of our data is gone. So lets talk about GitLab}
   \note{open git hub}
   \note{push changes}
+  \note{make second repo, do a few commands}
 \end{frame}
 
 
-\begin{frame}[fragile,t]{Merge conflicts}\vspace{10pt}
-  What happens when we make conflicting changes?
-
-
-\end{frame}
 
 \begin{frame}[fragile,t]{.gitignore}\vspace{10pt}
   Used to specify specific files, file endings which git should ignore, also possible to ignore whole folders
@@ -491,6 +546,7 @@
 \end{frame}
 
 \begin{frame}[fragile,t]{References}\vspace{10pt}
+  A lot of the picturs as well as the information was taken from\\
   \begin{enumerate}
     \item https://git-scm.com/site(All material under MIT)
     \item ProGit(All material under CreativeCommons CC-BY-NC-SA)
@@ -500,8 +556,9 @@
 \end{frame}
 
 \begin{frame}[fragile,t]{Further ressources}\vspace{10pt}
-  Interactive git tutorial: %\href{dwd}{https://learngitbranching.js.org/?locale=en_US}
-  Comprehensive git tutorial: %\href{dwd}{https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud (requires an atlassian account(free))}
+  \href{https://learngitbranching.js.org/?locale=en_US}{Interactive git tutorial}\vspace{10pt}\\
+  \href{https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud}{Another git tutorial}(requires an atlassian account(free))
+  Also teaches you how to use BitBucket a GitLab/GitHub alternative.
 \end{frame}
 
 \begin{frame}{Questions?}
